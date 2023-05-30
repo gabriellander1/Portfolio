@@ -1,27 +1,47 @@
 package core;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class BasePage {
 
-    private static final int TIMEOUT = 5;
-    private static final int POLLING = 100;
+    public WebDriver driver;
+    public WebDriverWait wait;
 
-    protected WebDriver driver;
-    private WebDriverWait wait;
     public BasePage(WebDriver driver){
         this.driver = driver;
-
-        PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIMEOUT), this);
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        PageFactory.initElements(driver, this);
     }
 
-    protected void click(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+    public void waitVisibility(WebElement element){
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
+
+    public void click(WebElement element){
+        waitVisibility(element);
         element.click();
     }
+
+    public void sendKeys(WebElement element, String value){
+        waitVisibility(element);
+        element.sendKeys(value);
+    }
+
+    public WebElement findElementUsingText(String type, String value){
+        return driver.findElement(By.xpath("//"+ type + "[text()='"+ value +"']"));
+    }
+
+    public String getText(String type, String attribute, String value){
+        return driver.findElement(By.xpath("//" + type + "[@" + attribute + "='" + value + "']")).getText();
+    }
 }
+
+
+
