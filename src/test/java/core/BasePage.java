@@ -40,6 +40,17 @@ public class BasePage {
     public String getText(String type, String attribute, String value){
         return driver.findElement(By.xpath("//" + type + "[@" + attribute + "='" + value + "']")).getText();
     }
+    public boolean isSelected(WebElement element){
+        return element.isSelected();
+    }
+
+    public WebElement checkBoxParentElement(String id){
+        return driver.findElement(By.xpath("//input[@id='"+id+"']//parent::label"));
+    }
+
+    public WebElement checkBoxElement(String id){
+        return driver.findElement(By.xpath("//input[@id='"+id+"']"));
+    }
 }
 
 

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features"},
         glue = {"steps", "core"},
-        tags = "@Register"
+        tags = "@CheckBox"
 )
 public class Runner {
 }
