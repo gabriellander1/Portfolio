@@ -1,12 +1,13 @@
 package steps;
 
+import core.Hook;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.TextBoxPage;
 
 public class TextBoxStepDefs {
-    WebDriver driver;
+    WebDriver driver = Hook.driver;
 
 
     @When("Fill Out Form")
@@ -17,6 +18,7 @@ public class TextBoxStepDefs {
 
     @Then("I have my output")
     public void iHaveMyRegistration() {
-        System.out.println("to do");
+        TextBoxPage textBoxPage = new TextBoxPage(driver);
+        textBoxPage.assertForm();
     }
 }

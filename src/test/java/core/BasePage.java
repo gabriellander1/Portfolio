@@ -12,7 +12,6 @@ import java.time.Duration;
 public class BasePage {
 
     public WebDriver driver;
-    public WebDriverWait wait;
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -21,7 +20,7 @@ public class BasePage {
     }
 
     public void waitVisibility(WebElement element){
-        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+        element = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(element));
     }
 
     public void click(WebElement element){
