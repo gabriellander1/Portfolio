@@ -31,23 +31,23 @@ public class CheckBoxPage extends BasePage {
     }
 
     public void youHaveSelected(){
-        boolean notes = isSelected(checkBoxElement("tree-node-notes"));
-        boolean commands = isSelected(checkBoxElement("tree-node-commands"));
-        boolean desktop = isSelected(checkBoxElement("tree-node-desktop"));
-        boolean react = isSelected(checkBoxElement("tree-node-react"));
-        boolean angular = isSelected(checkBoxElement("tree-node-angular"));
-        boolean veu = isSelected(checkBoxElement("tree-node-veu"));
-        boolean workspace = isSelected(checkBoxElement("tree-node-workspace"));
-        boolean publicBol = isSelected(checkBoxElement("tree-node-public"));
-        boolean privateBol = isSelected(checkBoxElement("tree-node-private"));
-        boolean classified = isSelected(checkBoxElement("tree-node-classified"));
-        boolean general = isSelected(checkBoxElement("tree-node-general"));
-        boolean office = isSelected(checkBoxElement("tree-node-office"));
-        boolean documents = isSelected(checkBoxElement("tree-node-documents"));
-        boolean wordFile = isSelected(checkBoxElement("tree-node-wordFile"));
-        boolean excelFile = isSelected(checkBoxElement("tree-node-excelFile"));
-        boolean downloads = isSelected(checkBoxElement("tree-node-downloads"));
-        boolean home = isSelected(checkBoxElement("tree-node-home"));
+        boolean notes = isSelected(inputElementById("tree-node-notes"));
+        boolean commands = isSelected(inputElementById("tree-node-commands"));
+        boolean desktop = isSelected(inputElementById("tree-node-desktop"));
+        boolean react = isSelected(inputElementById("tree-node-react"));
+        boolean angular = isSelected(inputElementById("tree-node-angular"));
+        boolean veu = isSelected(inputElementById("tree-node-veu"));
+        boolean workspace = isSelected(inputElementById("tree-node-workspace"));
+        boolean publicBol = isSelected(inputElementById("tree-node-public"));
+        boolean privateBol = isSelected(inputElementById("tree-node-private"));
+        boolean classified = isSelected(inputElementById("tree-node-classified"));
+        boolean general = isSelected(inputElementById("tree-node-general"));
+        boolean office = isSelected(inputElementById("tree-node-office"));
+        boolean documents = isSelected(inputElementById("tree-node-documents"));
+        boolean wordFile = isSelected(inputElementById("tree-node-wordFile"));
+        boolean excelFile = isSelected(inputElementById("tree-node-excelFile"));
+        boolean downloads = isSelected(inputElementById("tree-node-downloads"));
+        boolean home = isSelected(inputElementById("tree-node-home"));
 
         if(notes){
             Assert.assertEquals("notes", findElementUsingText("span", "notes").getText());

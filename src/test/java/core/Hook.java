@@ -24,6 +24,6 @@ public class Hook {
 
     @After
     public void after(){
-        //driver.quit();
+        driver.quit();
     }
 }

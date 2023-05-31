@@ -25,3 +25,15 @@
       Examples:
       | feature  | menu      |
       | Elements | Check Box |
+
+    @RadioButton
+    Scenario Outline: Radio Button
+      Given I am on "<feature>" Page
+      And I am on "<menu>"
+      When I click on "<radioButton>"
+      Then I have selected "<radioButton>"
+
+      Examples:
+      | feature  | menu         | radioButton |
+      | Elements | Radio Button | Yes         |
+      | Elements | Radio Button | Impressive  |

@@ -37,7 +37,11 @@ public class BasePage {
         return driver.findElement(By.xpath("//"+ type + "[text()='"+ value +"']"));
     }
 
-    public String getText(String type, String attribute, String value){
+    public String getTextByTypeText(String type, String value){
+        return findElementUsingText(type, value).getText();
+    }
+
+    public String getTextByTypeAttributeValue(String type, String attribute, String value){
         return driver.findElement(By.xpath("//" + type + "[@" + attribute + "='" + value + "']")).getText();
     }
     public boolean isSelected(WebElement element){
@@ -48,8 +52,12 @@ public class BasePage {
         return driver.findElement(By.xpath("//input[@id='"+id+"']//parent::label"));
     }
 
-    public WebElement checkBoxElement(String id){
+    public WebElement inputElementById(String id){
         return driver.findElement(By.xpath("//input[@id='"+id+"']"));
+    }
+
+    public WebElement inputElementByIdLabel(String id){
+        return driver.findElement(By.xpath("//input[@id='" + id + "']//parent::div//label"));
     }
 }
 

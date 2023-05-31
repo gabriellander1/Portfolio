@@ -41,11 +41,11 @@ public class TextBoxPage extends BasePage {
     }
 
     public void assertForm(){
-        Assert.assertEquals("Name:Jane Doe", getText("p", "id", "name"));
-        Assert.assertEquals("Email:janedoe@gmail.com", getText("p", "id", "email"));
-        Assert.assertEquals("Current Address :2551 Vista Dr #B301, Juneau, Alaska 99801, USA ", getText("p", "id", "currentAddress"));
+        Assert.assertEquals("Name:Jane Doe", getTextByTypeAttributeValue("p", "id", "name"));
+        Assert.assertEquals("Email:janedoe@gmail.com", getTextByTypeAttributeValue("p", "id", "email"));
+        Assert.assertEquals("Current Address :2551 Vista Dr #B301, Juneau, Alaska 99801, USA ", getTextByTypeAttributeValue("p", "id", "currentAddress"));
         // There is a bug here, the word Permananet does not exist
-        Assert.assertEquals("Permananet Address :156 Michael Ct #4, Anchorage, Alaska 99504, USA", getText("p", "id", "permanentAddress"));
+        Assert.assertEquals("Permananet Address :156 Michael Ct #4, Anchorage, Alaska 99504, USA", getTextByTypeAttributeValue("p", "id", "permanentAddress"));
     }
 
 }
