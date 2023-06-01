@@ -20,7 +20,7 @@ public class BasePage {
     }
 
     public void waitVisibility(WebElement element){
-        element = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(element));
+        element = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(element));
     }
 
     public void click(WebElement element){

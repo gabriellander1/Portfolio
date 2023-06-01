@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hook {
 
 
@@ -20,6 +22,7 @@ public class Hook {
         Dimension dimension = new Dimension(1920, 1080);
         driver.manage().window().setSize(dimension);
         driver.get("https://demoqa.com");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After
