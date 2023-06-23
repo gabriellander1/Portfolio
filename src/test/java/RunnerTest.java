@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features"},
         glue = {"steps", "core"},
-        tags = "@RadioButton",
+        tags = "@Elements",
         plugin = {"pretty"}
 )
 public class RunnerTest {

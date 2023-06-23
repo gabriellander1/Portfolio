@@ -37,3 +37,14 @@
       | feature  | menu         | radioButton |
       | Elements | Radio Button | Yes         |
       | Elements | Radio Button | Impressive  |
+
+    @WebTables
+    Scenario Outline: Web Tables
+      Given I am on "<feature>" Page
+      And I am on "<menu>"
+      When I add a new row
+      Then The new row is in table
+
+      Examples:
+      | feature  | menu       |
+      | Elements | Web Tables |
